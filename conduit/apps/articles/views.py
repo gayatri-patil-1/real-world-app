@@ -228,4 +228,8 @@ class ArticlesFeedAPIView(generics.ListAPIView):
             page, context=serializer_context, many=True
         )
 
+        def home(request):
+    print("DEPLOYMENT SUCCESS")
+    return HttpResponse("Hello")
+
         return self.get_paginated_response(serializer.data)
