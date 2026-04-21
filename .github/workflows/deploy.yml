@@ -14,11 +14,11 @@ jobs:
       run: |
         echo "🚀 Deployment started"
 
-        cd /home/ubuntu/django-realworld-example-app
+        cd /home/ubuntu/real-world-app
 
         git pull origin main
 
-        source venv/bin/activate
+        source real-app/bin/activate
 
         pip install -r requirements.txt
 
