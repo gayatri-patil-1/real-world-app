@@ -220,6 +220,8 @@ class ArticlesFeedAPIView(generics.ListAPIView):
         )
 
     def list(self, request):
+        print("DEPLOYMENT SUCCESS")
+
         queryset = self.get_queryset()
         page = self.paginate_queryset(queryset)
 
@@ -227,9 +229,5 @@ class ArticlesFeedAPIView(generics.ListAPIView):
         serializer = self.serializer_class(
             page, context=serializer_context, many=True
         )
-
-        def home(request):
-    print("DEPLOYMENT SUCCESS")
-    return HttpResponse("Hello")
 
         return self.get_paginated_response(serializer.data)
